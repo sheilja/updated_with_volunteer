@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            Events show
+        </title>
+    </head>
+    <body>
+            <% if(all1==1){%><li><span style="color: red">You are allready Requested for this Event</span></li><%}%>
+            <% if(count_status==1){%><li><span style="color: red">You can apply for maximum two events only</span></li><%}%>
+                       
+            <% for(i of Mainevent) {%>
+            <ul class="faq-list">
+
+                        <li><b>Event name:</b><%= i.Sub_Events.Event_name%></li>
+                        <li><b>Venue:</b>:<%= i.Sub_Events.Venue%></li>
+                        <li><b>Date:</b><%= i.Sub_Events.Date%></li>
+                        <li><b>Time:</b><%= i.Sub_Events.time%></li>
+                        <li><b>Judges:</b><%= i.Sub_Events.Judges%></li>
+                        
+                        <li><b>Images:</b><a href="<%= i.Sub_Events.pdf%>">click here</a></li>
+                        
+                        <% if(status=="on"){%><li><a href="/event_exp?Event_name=<%= i.Sub_Events.Event_name%>">Apply for voluteering</a></li><%}%>
+                       
+
+                     </ul>
+                     <% } %>
+        </body>
+    </body>
+</html>

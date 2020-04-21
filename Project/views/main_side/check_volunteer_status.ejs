@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Check Status
+        </title>
+    </head>
+    <body>
+            <% for(i of s) {%>
+            <ul class="faq-list">
+
+                        <li><b>Event name:</b><%= i.volunteer_event.Event_name%></li>
+                        <li><b>Status:</b><% 
+                            if(i.volunteer_event.status==0)
+                            {%>
+                                 Waiting 
+                            <%}
+                            if(i.volunteer_event.status==1)
+                            {
+                                %> Accepted 
+                                <%}
+                            if(i.volunteer_event.status==-1){
+                                %> Rejected 
+                                <%}%>
+                        </li>
+                       
+                    
+                     </ul>
+                     <% } %>
+        </body>
+    </body>
+</html>
